@@ -3,33 +3,49 @@
 
 |pypi| |pypi-status| |pypi-pyvers| |github-license| |github-status|
 
-.. |pypi| image:: https://img.shields.io/pypi/v/ffmpegio
+.. |pypi| image:: https://img.shields.io/pypi/v/ffmpegio-plugin-downloader
   :alt: PyPI
-.. |pypi-status| image:: https://img.shields.io/pypi/status/ffmpegio
+.. |pypi-status| image:: https://img.shields.io/pypi/status/ffmpegio-plugin-downloader
   :alt: PyPI - Status
-.. |pypi-pyvers| image:: https://img.shields.io/pypi/pyversions/ffmpegio
+.. |pypi-pyvers| image:: https://img.shields.io/pypi/pyversions/ffmpegio-plugin-downloader
   :alt: PyPI - Python Version
-.. |github-license| image:: https://img.shields.io/github/license/python-ffmpegio/python-ffmpegio
+.. |github-license| image:: https://img.shields.io/github/license/python-ffmpegio/python-ffmpegio-plugin-downloader
   :alt: GitHub License
-.. |github-status| image:: https://img.shields.io/github/workflow/status/python-ffmpegio/python-ffmpegio/Run%20Tests
+.. |github-status| image:: https://img.shields.io/github/workflow/status/python-ffmpegio/python-ffmpegio-plugin-downloader/Run%20Tests
   :alt: GitHub Workflow Status
 
-Python `ffmpegio` package aims to bring the full capability of `FFmpeg <https://ffmpeg.org>`__
-to read, write, and manipulate multimedia data to Python. FFmpeg is an open-source cross-platform 
-multimedia framework, which can handle most of the multimedia formats available today.
+`Python ffmpegio <https://python-ffmpegio.github.io/python-ffmpegio/>`__ package aims to bring 
+the full capability of `FFmpeg <https://ffmpeg.org>`__ to read, write, and manipulate multimedia 
+data to Python. FFmpeg is an open-source cross-platform multimedia framework, which can handle 
+most of the multimedia formats available today.
 
-`ffmpegio-plugin-downloader` adds a capability to download the latest release build of 
-FFmpeg via officially acknowledged host servers.
+One caveat of FFmpeg is that there is no formal program installer for Windows and MacOS (although 
+`homebrew` could be used for the latter). `ffmpegio-plugin-downloader` adds a capability to download 
+the latest release build of FFmpeg and use it in `ffmpegio` without any user intervention. This 
+mechanism is supported by `ffmpeg-downloader <https://github.com/python-ffmpegio/python-ffmpeg-downloader>__` 
+package. Downloading of the release build must be performed manually from the terminal screen, 
+outside of Python.
+
+Use
+===
+
+Install the package (which also installs `ffmpeg-downloader` package). Then, run `ffmpeg_downloader` to
+download and install the latest release:
 
 .. code-block:: bash
-
-  pip install ffmpegio-core # or ffmpegio if using it with its NumPy interface
 
   pip install ffmpegio_plugin_downloader
 
   python -m ffmpeg_downloader # downloads and installs the latest release
 
-Documentation
--------------
+Once the plugin and the FFmpeg executables are installed, `ffmpegio` will automatically
+detects the downloaded executables. (Exception: `ffmpegio` searches the system PATH first.
+So, if `ffmpeg` and `ffprobe` are already available on the system, `ffmpegio_plugin_downloader`
+will never be called.)
 
-Visit our `GitHub page here <https://python-ffmpegio.github.io/python-ffmpegio/>`__
+At a later date, the installed FFmpeg can be updated to the latest release
+
+.. code-block:: bash
+
+  python -m ffmpeg_downloader -U # downloads and updates to the latest release
+

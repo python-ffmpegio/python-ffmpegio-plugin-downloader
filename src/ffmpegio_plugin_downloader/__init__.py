@@ -18,7 +18,7 @@ def finder():
     ffmpeg_path = ffdl.ffmpeg_path
 
     if ffmpeg_path is None:
-        logging.warn(
+        logging.warning(
             """ffmpegio-plugin-downloader is detected but the FFmpeg executables have not been installed. First, run in the terminal:
         
           python -m ffmpeg_downloader

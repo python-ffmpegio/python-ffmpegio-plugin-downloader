@@ -1,3 +1,0 @@
-[submodule "ffmpegio"]
-	path = ffmpegio
-	url = https://github.com/python-ffmpegio/python-ffmpegio.git
