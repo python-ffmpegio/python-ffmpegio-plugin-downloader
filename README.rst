@@ -22,7 +22,7 @@ most of the multimedia formats available today.
 One caveat of FFmpeg is that there is no formal program installer for Windows and MacOS (although 
 `homebrew` could be used for the latter). `ffmpegio-plugin-downloader` adds a capability to download 
 the latest release build of FFmpeg and use it in `ffmpegio` without any user intervention. This 
-mechanism is supported by `ffmpeg-downloader <https://github.com/python-ffmpegio/python-ffmpeg-downloader>__` 
+mechanism is supported by `ffmpeg-downloader <https://github.com/python-ffmpegio/python-ffmpeg-downloader>`__ 
 package. Downloading of the release build must be performed manually from the terminal screen, 
 outside of Python.
 
@@ -34,14 +34,12 @@ download and install the latest release:
 
 .. code-block:: bash
 
-  pip install ffmpegio_plugin_downloader
+  pip install ffmpegio-core ffmpegio-plugin-downloader
 
   python -m ffmpeg_downloader # downloads and installs the latest release
 
 Once the plugin and the FFmpeg executables are installed, `ffmpegio` will automatically
-detects the downloaded executables. (Exception: `ffmpegio` searches the system PATH first.
-So, if `ffmpeg` and `ffprobe` are already available on the system, `ffmpegio_plugin_downloader`
-will never be called.)
+detect the downloaded executables.
 
 At a later date, the installed FFmpeg can be updated to the latest release
 
@@ -49,3 +47,6 @@ At a later date, the installed FFmpeg can be updated to the latest release
 
   python -m ffmpeg_downloader -U # downloads and updates to the latest release
 
+.. note::
+  `ffmpegio-plugin-downloader` will *not* be activated if `ffmpeg` and `ffprobe` are 
+  already available on the system PATH.
