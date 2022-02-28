@@ -19,11 +19,11 @@ the full capability of `FFmpeg <https://ffmpeg.org>`__ to read, write, and manip
 data to Python. FFmpeg is an open-source cross-platform multimedia framework, which can handle 
 most of the multimedia formats available today.
 
-One caveat of FFmpeg is that there is no formal program installer for Windows and MacOS (although 
+One caveat of FFmpeg is that there is no official program installer for Windows and MacOS (although 
 `homebrew` could be used for the latter). `ffmpegio-plugin-downloader` adds a capability to download 
-the latest release build of FFmpeg and use it in `ffmpegio` without any user intervention. This 
-mechanism is supported by `ffmpeg-downloader <https://github.com/python-ffmpegio/python-ffmpeg-downloader>`__ 
-package. Downloading of the release build must be performed manually from the terminal screen, 
+the latest release build of FFmpeg and enables the `ffmpegio` package to detect the paths of `ffmpeg`
+and `ffprobe` automatically. This mechanism is supported by `ffmpeg-downloader <https://github.com/python-ffmpegio/python-ffmpeg-downloader>`__ 
+package. Downloading of the release build must be performed interactively from the terminal screen, 
 outside of Python.
 
 Use
